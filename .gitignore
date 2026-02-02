@@ -1,2 +1,14 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+
+# OS files
+.DS_Store
+Thumbs.db
 **/RGGHWORK.code-workspace
 **/.env
