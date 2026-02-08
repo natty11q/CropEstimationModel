@@ -9,8 +9,10 @@ sys.path.append(os.path.join(os.path.dirname(__file__), 'apps/TutorNest/src/inte
 dotenv.load_dotenv()
 
 def main()-> int:
-    if len(sys.argc >= 1):
-        print(f"argv : {sys.argv[0]} , {sys.argv[0]}")
+    c = 0
+    for arg in sys.argv:
+        print(f"argv{0} : {arg}")
+        c+=1
     return 0
 
 
