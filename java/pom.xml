@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.app</groupId>
-	<artifactId>farmanetapp</artifactId>
+	<artifactId>predictionmodelapp</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>farmanetapp</name>
-	<description>Demo project for Spring Boot</description>
+	<name>predictionmodelapp</name>
+	<description>Prediction model application for Farmernet</description>
 	<url/>
 	<licenses>
 		<license/>
