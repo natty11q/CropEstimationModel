@@ -1,0 +1,3 @@
+
+run:
+    mvn clean site

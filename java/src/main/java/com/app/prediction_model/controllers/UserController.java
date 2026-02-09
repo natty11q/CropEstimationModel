@@ -8,21 +8,22 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import com.app.prediction_model.repository.UserRepository;
+// import com.app.prediction_model.repository.UserRepository;
 import com.app.prediction_model.model.User;
+import com.app.prediction_model.repository.InMemoryUserRepository;
 
 
 @RestController
 public class UserController {
     
-    private final UserRepository userRepository;
+    private final InMemoryUserRepository userRepository;
 
     /**
      * Constructs a new {@code UserController}.
      *
      * @param userRepository the repository used to access user data
      */
-    public UserController(UserRepository userRepository) {
+    public UserController(InMemoryUserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
