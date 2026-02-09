@@ -1,9 +1,13 @@
 package com.app.prediction_model.model;
 
+// import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
 
 public class User {
 
-    
+    @Id
+    @GeneratedValue
     private long id;
     
     private String firstName;
@@ -23,16 +27,31 @@ public class User {
    * @param username the username of the user
    * @param email the email address of the user
    */
-    public User(Long id, String firstName, String lastName, String username, String email)
+    public User(long id, String firstName, String lastName, String username, String email)
     {
-
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.username = username;
+        this.email = email;
     }
 
+
+    /**
+     * Gets the user's UUId.
+     *
+     * @return the user's UUId
+     */
     public long getId()
     {
         return id;
     }
 
+    /**
+     *
+     * Sets the user's UUId.
+     * @param id the new id
+     **/
     public void setId(long id)
     {
         this.id = id;
