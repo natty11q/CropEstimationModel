@@ -1,20 +1,27 @@
+#!/usr/bin/env python
 import os
 import sys
-import dotenv
+from pathlib import Path
 
+def main():
+    # core/ directory
+    base_dir = Path(__file__).resolve().parent
 
-sys.path.append(os.path.join(os.path.dirname(__file__), 'apps/TutorNest/src'))
-sys.path.append(os.path.join(os.path.dirname(__file__), 'apps/TutorNest/src/interface/dgal_site'))
+    # Ensure Python can import the Django project package under core/apps/<project>
+    sys.path.insert(0, str(base_dir))                 # core/
+    sys.path.insert(0, str(base_dir / "apps"))        # core/apps/
 
-dotenv.load_dotenv()
+    # Django settings module (project folder is core/apps/FarmerNetPredictionModel/)
+    os.environ.setdefault("DJANGO_SETTINGS_MODULE", "FarmerNetPredictionModel.settings")
 
-def main()-> int:
-    c = 0
-    for arg in sys.argv:
-        print(f"argv{0} : {arg}")
-        c+=1
-    return 0
+    try:
+        from django.core.management import execute_from_command_line
+    except ImportError as exc:
+        raise ImportError(
+            "Django is not installed or not available in this environment."
+        ) from exc
 
+    execute_from_command_line(sys.argv)
 
 if __name__ == "__main__":
-    sys.exit(main())
+    main()
