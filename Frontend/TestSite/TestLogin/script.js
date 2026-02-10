@@ -1,21 +1,27 @@
-// document.getElementById("login").addEventListener("click", loginFunc);
+console.log("script.js loaded");
 
 
-// function loginFunc() {
-//     const username = document.getElementById("username");
-//     const password = document.getElementById("password");
+const form = document.getElementById("login-form");
 
-//     fetch("https://jsonplaceholder.typicode.com/todos", {
-//         method: "POST",
-//         body: JSON.stringify({
-//             userId: 1,
-//             title: "Fix my bugs",
-//             completed: false
-//     }),
-//         headers: {
-//             "Content-Type": "application/json; charset=UTF-8"
-//     }
-//     })
-//     then(response => response.json())
-//     then(json => console.log(json))
-// }
+form.addEventListener("submit", async(e) => {
+    e.preventDefault();
+    
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    data = {
+        "username": username,
+        "password": password
+    };
+
+    const response = await fetch("http://127.0.0.1:5000/login", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json; charset=UTF-8"
+        },
+        body: JSON.stringify(data),
+    })
+    const result = await response.json();
+    console.log(result);
+
+})
