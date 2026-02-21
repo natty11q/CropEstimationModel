@@ -10,3 +10,8 @@ Or on windows
 
 The virtual environment should now be setup in the .venv folder and activated.
 now simply run [manage.py](./manage.py "manage.py file") to start the server.
+
+
+Run Banckend:
+    * `cd backend`
+    * `python manage.py runserver`
