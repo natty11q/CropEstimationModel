@@ -16,6 +16,7 @@ distro==1.9.0
 dj-database-url==2.2.0
 Django==4.2.16
 django-advanced-filters==2.0.0
+django-cors-headers==4.9.0
 django-heroku==0.3.1
 django-modeladmin-reorder-reborn==0.1.4
 django-nested-admin==4.1.1
@@ -23,6 +24,7 @@ django-phonenumber-field==8.0.0
 django-phonenumbers==1.0.1
 django-stubs==5.1.3
 django-stubs-ext==5.1.3
+djangorestframework==3.16.1
 Eel==0.16.0
 exceptiongroup==1.2.2
 future==0.18.3

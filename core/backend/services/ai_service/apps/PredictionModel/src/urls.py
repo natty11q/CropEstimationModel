@@ -16,7 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.views.generic import RedirectView
+
+from apps.PredictionModel.src.interface.PredictionModelMain import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path("predict/", views.predict),
+    path("echo/", views.echo),
 ]
